@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Jekyll Bootstrap</title>
+ <link href="http://166.111.131.89/" rel="self"/>
+ <link href="http://166.111.131.89"/>
+ <updated>2013-06-26T15:35:31+08:00</updated>
+ <id>http://166.111.131.89</id>
+ <author>
+   <name>Name Lastname</name>
+   <email>blah@email.test</email>
+ </author>
+
+ 
+ <entry>
+   <title>Shift</title>
+   <link href="http://166.111.131.89/builtin/shift"/>
+   <updated>2013-06-26T00:00:00+08:00</updated>
+   <id>http://166.111.131.89/builtin/shift</id>
+   <content type="html">&lt;h2 id='function_description'&gt;Function description&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Let O be the result of calling ToObject passing the this value as the argument.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let lenVal be the result of calling the [[Get]] internal method of O with argument &amp;#8220;length&amp;#8221;.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let len be ToUint32(lenVal).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;If len is zero, then&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Call the [[Put]] internal method of O with arguments &amp;#8220;length&amp;#8221;, 0, and true.&lt;/li&gt;
+
+&lt;li&gt;Return undefined.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let first be the result of calling the [[Get]] internal method of O with argument &amp;#8220;0&amp;#8221;.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let k be 1.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Repeat, while k &amp;lt; len&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Let from be ToString(k).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let to be ToString(k–1).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let fromPresent be the result of calling the [[HasProperty]] internal method of O with argument from.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;If fromPresent is true, then&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Let fromVal be the result of calling the [[Get]] internal method of O with argument from.&lt;/li&gt;
+
+&lt;li&gt;Call the [[Put]] internal method of O with arguments to, fromVal, and true.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Else, fromPresent is false 1. Call the [[Delete]] internal method of O with arguments to and true.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Increase k by 1.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Call the [[Delete]] internal method of O with arguments ToString(len–1) and true.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Call the [[Put]] internal method of O with arguments &amp;#8220;length&amp;#8221;, (len–1) , and true.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Return first.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; The shift function is intentionally generic; it does not require that its this value be an Array object. Therefore it can be transferred to other kinds of objects for use as a method. Whether the shift function can be applied successfully to a host object is implementation-dependent.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Reverse</title>
+   <link href="http://166.111.131.89/builtin/reverse"/>
+   <updated>2013-06-26T00:00:00+08:00</updated>
+   <id>http://166.111.131.89/builtin/reverse</id>
+   <content type="html">&lt;h2 id='function_description'&gt;Function description&lt;/h2&gt;
+
+&lt;p&gt;The elements of the array are rearranged so as to reverse their order. The object is returned as the result of the call.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Let O be the result of calling ToObject passing the this value as the argument.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let lenVal be the result of calling the [[Get]] internal method of O with argument &amp;#8220;length&amp;#8221;.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let len be ToUint32(lenVal).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let middle be floor(len/2).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let lower be 0.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Repeat, while lower != middle&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Let upper be len-lower-1&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let upperP be ToString(upper).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let lowerP be ToString(lower).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let lowerValue be the result of calling the [[Get]] internal method of O with argument lowerP.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let upperValue be the result of calling the [[Get]] internal method of O with argument upperP .&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let lowerExists be the result of calling the [[HasProperty]] internal method of O with argument lowerP.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let upperExists be the result of calling the [[HasProperty]] internal method of O with argument upperP.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;If lowerExists is true and upperExists is true, then&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Call the [[Put]] internal method of O with arguments lowerP, upperValue, and true .&lt;/li&gt;
+
+&lt;li&gt;Call the [[Put]] internal method of O with arguments upperP, lowerValue, and true .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Else if lowerExists is false and upperExists is true, then&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Call the [[Put]] internal method of O with arguments lowerP, upperValue, and true .&lt;/li&gt;
+
+&lt;li&gt;Call the [[Delete]] internal method of O, with arguments upperP and true.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Else if lowerExists is true and upperExists is false, then&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Call the [[Delete]] internal method of O, with arguments lowerP and true .&lt;/li&gt;
+
+&lt;li&gt;Call the [[Put]] internal method of O with arguments upperP, lowerValue, and true .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Else, both lowerExists and upperExists are false + No action is required.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Increase lower by 1.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Return O .&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; The reverse function is intentionally generic; it does not require that its this value be an Array object. Therefore, it can be transferred to other kinds of objects for use as a method. Whether the reverse function can be applied successfully to a host object is implementation-dependent.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Push</title>
+   <link href="http://166.111.131.89/builtin/push"/>
+   <updated>2013-06-26T00:00:00+08:00</updated>
+   <id>http://166.111.131.89/builtin/push</id>
+   <content type="html">&lt;h2 id='function_description'&gt;Function description&lt;/h2&gt;
+
+&lt;p&gt;The arguments are appended to the end of the array, in the order in which they appear. The new length of the array is returned as the result of the call. When the push method is called with zero or more arguments item1, item2, etc., the following steps are taken:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Let O be the result of calling ToObject passing the this value as the argument.&lt;/li&gt;
+
+&lt;li&gt;Let lenVal be the result of calling the [[Get]] internal method of O with argument &amp;#8220;length&amp;#8221;.&lt;/li&gt;
+
+&lt;li&gt;Let n be ToUint32(lenVal).&lt;/li&gt;
+
+&lt;li&gt;Let items be an internal List whose elements are, in left to right order, the arguments that were passed to this function invocation.&lt;/li&gt;
+
+&lt;li&gt;Repeat, while items is not empty a. Remove the first element from items and let E be the value of the element. b. Call the [[Put]] internal method of O with arguments ToString(n), E, and true. c. Increase n by 1.&lt;/li&gt;
+
+&lt;li&gt;Call the [[Put]] internal method of O with arguments &amp;#8220;length&amp;#8221;, n, and true.&lt;/li&gt;
+
+&lt;li&gt;Return n.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The length property of the push method is 1.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; The push function is intentionally generic; it does not require that its this value be an Array object. Therefore it can be transferred to other kinds of objects for use as a method. Whether the push function can be applied successfully to a host object is implementation-dependent.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Pop</title>
+   <link href="http://166.111.131.89/builtin/pop"/>
+   <updated>2013-06-26T00:00:00+08:00</updated>
+   <id>http://166.111.131.89/builtin/pop</id>
+   <content type="html">&lt;h2 id='function_description'&gt;Function description&lt;/h2&gt;
+
+&lt;p&gt;The last element of the array is removed from the array and returned.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Let O be the result of calling ToObject passing the this value as the argument.&lt;/li&gt;
+
+&lt;li&gt;Let lenVal be the result of calling the [[Get]] internal method of O with argument &amp;#8220;length&amp;#8221;.&lt;/li&gt;
+
+&lt;li&gt;Let len be ToUint32(lenVal).&lt;/li&gt;
+
+&lt;li&gt;If len is zero,&lt;br /&gt;a. Call the [[Put]] internal method of O with arguments &amp;#8220;length&amp;#8221;, 0, and true. b. Return undefined.&lt;/li&gt;
+
+&lt;li&gt;Else, len &amp;gt; 0 a. Let indx be ToString(len–1). b. Let element be the result of calling the [[Get]] internal method of O with argument indx. c. Call the [[Delete]] internal method of O with arguments indx and true. d. Call the [[Put]] internal method of O with arguments &amp;#8220;length&amp;#8221;, indx, and true. e. Return element.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; The pop function is intentionally generic; it does not require that its this value be an Array object. Therefore it can be transferred to other kinds of objects for use as a method. Whether the pop function can be applied successfully to a host object is implementation-dependent.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Join</title>
+   <link href="http://166.111.131.89/builtin/join"/>
+   <updated>2013-06-25T00:00:00+08:00</updated>
+   <id>http://166.111.131.89/builtin/join</id>
+   <content type="html">&lt;h2 id='function_description'&gt;Function description&lt;/h2&gt;
+
+&lt;p&gt;The elements of the array are converted to Strings, and these Strings are then concatenated, separated by occurrences of the separator. If no separator is provided, a single comma is used as the separator.&lt;/p&gt;
+
+&lt;p&gt;The join method takes one argument, separator, and performs the following steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Let O be the result of calling ToObject passing the this value as the argument.&lt;/li&gt;
+
+&lt;li&gt;Let lenVal be the result of calling the [[Get]] internal method of O with argument &amp;#8220;length&amp;#8221;.&lt;/li&gt;
+
+&lt;li&gt;Let len be ToUint32(lenVal).&lt;/li&gt;
+
+&lt;li&gt;If separator is undefined, let separator be the single-character String &amp;#8221;,&amp;#8221;.&lt;/li&gt;
+
+&lt;li&gt;Let sep be ToString(separator).&lt;/li&gt;
+
+&lt;li&gt;If len is zero, return the empty String.&lt;/li&gt;
+
+&lt;li&gt;Let element0 be the result of calling the [[Get]] internal method of O with argument &amp;#8220;0&amp;#8221;.&lt;/li&gt;
+
+&lt;li&gt;If element0 is undefined or null, let R be the empty String; otherwise, Let R be ToString(element0).&lt;/li&gt;
+
+&lt;li&gt;Let k be 1.&lt;/li&gt;
+
+&lt;li&gt;Repeat, while k &amp;lt; len a. Let S be the String value produced by concatenating R and sep. b. Let element be the result of calling the [[Get]] internal method of O with argument ToString(k). c. If element is undefined or null, Let next be the empty String; otherwise, let next be ToString(element). d. Let R be a String value produced by concatenating S and next. e. Increase k by 1.&lt;/li&gt;
+
+&lt;li&gt;Return R.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; The length property of the join method is 1. NOTE The join function is intentionally generic; it does not require that its this value be an Array object. Therefore, it can be transferred to other kinds of objects for use as a method. Whether the join function can be applied successfully to a host object is implementation-dependent.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Concat</title>
+   <link href="http://166.111.131.89/builtin/concat"/>
+   <updated>2013-06-25T00:00:00+08:00</updated>
+   <id>http://166.111.131.89/builtin/concat</id>
+   <content type="html">&lt;h2 id='function_description'&gt;Function description&lt;/h2&gt;
+
+&lt;p&gt;When the concat method is called with zero or more arguments item1, item2, etc., it returns an array containing the array elements of the object followed by the array elements of each argument in order. The following steps are taken:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Let &lt;em&gt;O&lt;/em&gt; be the result of calling ToObject passing the &lt;strong&gt;this&lt;/strong&gt; value as the argument.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let &lt;em&gt;A&lt;/em&gt; be a new array created as if by the expression &lt;strong&gt;new Array()&lt;/strong&gt; where &lt;strong&gt;Array&lt;/strong&gt; is the standard built-in constructor with that name.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let &lt;em&gt;n&lt;/em&gt; be 0.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let &lt;em&gt;items&lt;/em&gt; be an internal List whose first element is &lt;em&gt;O&lt;/em&gt; and whose subsequent elements are, in left to right order, the arguments that were passed to this function invocation.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Repeat, while &lt;em&gt;items&lt;/em&gt; is not empty&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Remove the first element from items and let &lt;em&gt;E&lt;/em&gt; be the value of the element.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;If the value of the [[Class]] internal property of &lt;em&gt;E&lt;/em&gt; is &lt;strong&gt;&amp;#8220;Array&amp;#8221;&lt;/strong&gt;, then i. Let &lt;em&gt;k&lt;/em&gt; be 0. ii. Let &lt;em&gt;len&lt;/em&gt; be the result of calling the [[Get]] internal method of E with argument &lt;strong&gt;&amp;#8220;length&amp;#8221;&lt;/strong&gt;. iii. Repeat, while &lt;em&gt;k&lt;/em&gt; &amp;lt; &lt;em&gt;len&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Let &lt;em&gt;P&lt;/em&gt; be ToString(_k_).&lt;/li&gt;
+
+&lt;li&gt;Let &lt;em&gt;exists&lt;/em&gt; be the result of calling the [[HasProperty]] internal method of &lt;em&gt;E&lt;/em&gt; with &lt;em&gt;P&lt;/em&gt;.&lt;/li&gt;
+
+&lt;li&gt;If &lt;em&gt;exists&lt;/em&gt; is &lt;strong&gt;true&lt;/strong&gt;, then a Let &lt;em&gt;subElement&lt;/em&gt; be the result of calling the [[Get]] internal method of &lt;em&gt;E&lt;/em&gt; with argument &lt;em&gt;P&lt;/em&gt;. b Call the [[DefineOwnProperty]] internal method of A with arguments ToString(n), Property Descriptor {[[Value]]: subElement, [[Writable]]: &lt;strong&gt;true&lt;/strong&gt;, [[Enumerable]]: &lt;strong&gt;true&lt;/strong&gt;, [[Configurable]]: &lt;strong&gt;true&lt;/strong&gt;}, and false.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Increase &lt;em&gt;n&lt;/em&gt; by 1.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Increase &lt;em&gt;k&lt;/em&gt; by 1.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Else, E is not an Array i. Call the [[DefineOwnProperty]] internal method of A with arguments ToString(n), Property Descriptor {[[Value]]: E, [[Writable]]: &lt;strong&gt;true&lt;/strong&gt;, [[Enumerable]]: &lt;strong&gt;true&lt;/strong&gt;, [[Configurable]]: &lt;strong&gt;true&lt;/strong&gt;}, and false. ii. Increase &lt;em&gt;n&lt;/em&gt; by 1.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Return A. The length property of the concat method is 1.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; The concat function is intentionally generic; it does not require that its this value be an Array object. Therefore it can be transferred to other kinds of objects for use as a method. Whether the concat function can be applied successfully to a host object is implementation-dependent.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Slice</title>
+   <link href="http://166.111.131.89/builtin/slice"/>
+   <updated>2012-06-26T00:00:00+08:00</updated>
+   <id>http://166.111.131.89/builtin/slice</id>
+   <content type="html">&lt;h2 id='function_description'&gt;Function description&lt;/h2&gt;
+
+&lt;p&gt;The slice method takes two arguments, start and end, and returns an array containing the elements of the array from element start up to, but not including, element end (or through the end of the array if end is undefined). If start is negative, it is treated as length+start where length is the length of the array. If end is negative, it is treated as length+end where length is the length of the array. The following steps are taken:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Let O be the result of calling ToObject passing the this value as the argument.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let A be a new array created as if by the expression new Array() where Array is the standard built-in constructor with that name.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let lenVal be the result of calling the [[Get]] internal method of O with argument &amp;#8220;length&amp;#8221;.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let len be ToUint32(lenVal).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let relativeStart be ToInteger(start).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;If relativeStart is negative, let k be max((len + relativeStart),0); else let k be min(relativeStart, len).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;If end is undefined, let relativeEnd be len; else let relativeEnd be ToInteger(end).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;If relativeEnd is negative, let final be max((len + relativeEnd),0); else let final be min(relativeEnd, len).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let n be 0.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Repeat, while k &amp;lt; final&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Let Pk be ToString(k).&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Let kPresent be the result of calling the [[HasProperty]] internal method of O with argument Pk.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;If kPresent is true, then&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Let kValue be the result of calling the [[Get]] internal method of O with argument Pk.&lt;/li&gt;
+
+&lt;li&gt;Call the [[DefineOwnProperty]] internal method of A with arguments ToString(n), Property Descriptor {[[Value]]: kValue, [[Writable]]: true, [[Enumerable]]: true, [[Configurable]]: true}, and false.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Increase k by 1.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Increase n by 1.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Return A. The length property of the slice method is 2.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; The slice function is intentionally generic; it does not require that its this value be an Array object. Therefore it can be transferred to other kinds of objects for use as a method. Whether the slice function can be applied successfully to a host object is implementation-dependent&lt;/p&gt;</content>
+ </entry>
+ 
+ 
+</feed>

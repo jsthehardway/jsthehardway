@@ -1,0 +1,184 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Slice</title>
+    <link href="/assets/themes/liuyl/css/pure-min.css" rel="stylesheet">
+    <link href="/assets/themes/liuyl/css/typo.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/liuyl/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="pure-g-r" id="layout">
+      <div class="pure-u" id="menu">
+        <div class="pure-menu pure-menu-open">
+          <a href="/" class="pure-menu-heading">JS The hard way</a>
+          <ul>
+            
+            
+              
+                <li>
+              
+              <a href="/builtin/shift">Shift</a></li>
+            
+              
+                <li>
+              
+              <a href="/builtin/reverse">Reverse</a></li>
+            
+              
+                <li>
+              
+              <a href="/builtin/push">Push</a></li>
+            
+              
+                <li>
+              
+              <a href="/builtin/pop">Pop</a></li>
+            
+              
+                <li>
+              
+              <a href="/builtin/join">Join</a></li>
+            
+              
+                <li>
+              
+              <a href="/builtin/concat">Concat</a></li>
+            
+              
+                <li class="pure-menu-selected">
+              
+              <a href="/builtin/slice">Slice</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="content pure-u-1" id="main">
+        
+<div class="content">
+  <div class="blog-content pure-g">
+    <div class="blog-content-header pure-g">
+      <div class="pure-u-1-2">
+        <h1 class="blog-content-title">Slice</h1>
+        <p class="blog-content-subtitle">Added/Revised at June 26, 2012</p>
+      </div>
+      <div class="pure-u-1-2 blog-content-controls">
+        <!--
+        
+          <a href="#" class="pure-button secondary-button pure-button-disabled">Previous article</a>
+        
+        
+          <a href="/builtin/concat" class="pure-button secondary-button">Next article</a>
+        
+        -->
+      </div>
+    </div>
+  </div>
+  <br />
+
+  <h2 id='function_description'>Function description</h2>
+
+<p>The slice method takes two arguments, start and end, and returns an array containing the elements of the array from element start up to, but not including, element end (or through the end of the array if end is undefined). If start is negative, it is treated as length+start where length is the length of the array. If end is negative, it is treated as length+end where length is the length of the array. The following steps are taken:</p>
+
+<ol>
+<li>
+<p>Let O be the result of calling ToObject passing the this value as the argument.</p>
+</li>
+
+<li>
+<p>Let A be a new array created as if by the expression new Array() where Array is the standard built-in constructor with that name.</p>
+</li>
+
+<li>
+<p>Let lenVal be the result of calling the [[Get]] internal method of O with argument &#8220;length&#8221;.</p>
+</li>
+
+<li>
+<p>Let len be ToUint32(lenVal).</p>
+</li>
+
+<li>
+<p>Let relativeStart be ToInteger(start).</p>
+</li>
+
+<li>
+<p>If relativeStart is negative, let k be max((len + relativeStart),0); else let k be min(relativeStart, len).</p>
+</li>
+
+<li>
+<p>If end is undefined, let relativeEnd be len; else let relativeEnd be ToInteger(end).</p>
+</li>
+
+<li>
+<p>If relativeEnd is negative, let final be max((len + relativeEnd),0); else let final be min(relativeEnd, len).</p>
+</li>
+
+<li>
+<p>Let n be 0.</p>
+</li>
+
+<li>
+<p>Repeat, while k &lt; final</p>
+
+<ol>
+<li>
+<p>Let Pk be ToString(k).</p>
+</li>
+
+<li>
+<p>Let kPresent be the result of calling the [[HasProperty]] internal method of O with argument Pk.</p>
+</li>
+
+<li>
+<p>If kPresent is true, then</p>
+
+<ol>
+<li>Let kValue be the result of calling the [[Get]] internal method of O with argument Pk.</li>
+
+<li>Call the [[DefineOwnProperty]] internal method of A with arguments ToString(n), Property Descriptor {[[Value]]: kValue, [[Writable]]: true, [[Enumerable]]: true, [[Configurable]]: true}, and false.</li>
+</ol>
+</li>
+
+<li>
+<p>Increase k by 1.</p>
+</li>
+
+<li>
+<p>Increase n by 1.</p>
+</li>
+</ol>
+</li>
+
+<li>
+<p>Return A. The length property of the slice method is 2.</p>
+</li>
+</ol>
+
+<p><strong>NOTE</strong> The slice function is intentionally generic; it does not require that its this value be an Array object. Therefore it can be transferred to other kinds of objects for use as a method. Whether the slice function can be applied successfully to a host object is implementation-dependent</p>
+
+  <h2>Code Editor</h2>
+  <div id="editor">
+    
+  </div>
+  <button class="pure-button pure-button-primary" id="test">Test</button>
+  <div id="testresult">
+    <ul id="logger"></ul>
+  </div>
+</div>
+
+
+        <footer class="footer">
+          <div class="pure-menu pure-menu-horizontal pure-menu-open">
+            <ul>
+              <li><a href="http://github.com/liuyl">Follow Me On Github</a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="/assets/themes/liuyl/js/jquery.js"></script>
+    <script src="/assets/themes/liuyl/js/qunit.js"></script>
+    <script src="/assets/themes/liuyl/js/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/assets/themes/liuyl/js/tests.js"></script>
+  </body>
+</html>

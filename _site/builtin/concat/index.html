@@ -1,0 +1,166 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Concat</title>
+    <link href="/assets/themes/liuyl/css/pure-min.css" rel="stylesheet">
+    <link href="/assets/themes/liuyl/css/typo.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/liuyl/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="pure-g-r" id="layout">
+      <div class="pure-u" id="menu">
+        <div class="pure-menu pure-menu-open">
+          <a href="/" class="pure-menu-heading">JS The hard way</a>
+          <ul>
+            
+            
+              
+                <li>
+              
+              <a href="/builtin/shift">Shift</a></li>
+            
+              
+                <li>
+              
+              <a href="/builtin/reverse">Reverse</a></li>
+            
+              
+                <li>
+              
+              <a href="/builtin/push">Push</a></li>
+            
+              
+                <li>
+              
+              <a href="/builtin/pop">Pop</a></li>
+            
+              
+                <li>
+              
+              <a href="/builtin/join">Join</a></li>
+            
+              
+                <li class="pure-menu-selected">
+              
+              <a href="/builtin/concat">Concat</a></li>
+            
+              
+                <li>
+              
+              <a href="/builtin/slice">Slice</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="content pure-u-1" id="main">
+        
+<div class="content">
+  <div class="blog-content pure-g">
+    <div class="blog-content-header pure-g">
+      <div class="pure-u-1-2">
+        <h1 class="blog-content-title">Concat</h1>
+        <p class="blog-content-subtitle">Added/Revised at June 25, 2013</p>
+      </div>
+      <div class="pure-u-1-2 blog-content-controls">
+        <!--
+        
+          <a href="/builtin/slice" class="pure-button secondary-button">Previous article</a>
+        
+        
+          <a href="/builtin/join" class="pure-button secondary-button">Next article</a>
+        
+        -->
+      </div>
+    </div>
+  </div>
+  <br />
+
+  <h2 id='function_description'>Function description</h2>
+
+<p>When the concat method is called with zero or more arguments item1, item2, etc., it returns an array containing the array elements of the object followed by the array elements of each argument in order. The following steps are taken:</p>
+
+<ol>
+<li>
+<p>Let <em>O</em> be the result of calling ToObject passing the <strong>this</strong> value as the argument.</p>
+</li>
+
+<li>
+<p>Let <em>A</em> be a new array created as if by the expression <strong>new Array()</strong> where <strong>Array</strong> is the standard built-in constructor with that name.</p>
+</li>
+
+<li>
+<p>Let <em>n</em> be 0.</p>
+</li>
+
+<li>
+<p>Let <em>items</em> be an internal List whose first element is <em>O</em> and whose subsequent elements are, in left to right order, the arguments that were passed to this function invocation.</p>
+</li>
+
+<li>
+<p>Repeat, while <em>items</em> is not empty</p>
+
+<ol>
+<li>
+<p>Remove the first element from items and let <em>E</em> be the value of the element.</p>
+</li>
+
+<li>
+<p>If the value of the [[Class]] internal property of <em>E</em> is <strong>&#8220;Array&#8221;</strong>, then i. Let <em>k</em> be 0. ii. Let <em>len</em> be the result of calling the [[Get]] internal method of E with argument <strong>&#8220;length&#8221;</strong>. iii. Repeat, while <em>k</em> &lt; <em>len</em></p>
+
+<ol>
+<li>Let <em>P</em> be ToString(_k_).</li>
+
+<li>Let <em>exists</em> be the result of calling the [[HasProperty]] internal method of <em>E</em> with <em>P</em>.</li>
+
+<li>If <em>exists</em> is <strong>true</strong>, then a Let <em>subElement</em> be the result of calling the [[Get]] internal method of <em>E</em> with argument <em>P</em>. b Call the [[DefineOwnProperty]] internal method of A with arguments ToString(n), Property Descriptor {[[Value]]: subElement, [[Writable]]: <strong>true</strong>, [[Enumerable]]: <strong>true</strong>, [[Configurable]]: <strong>true</strong>}, and false.</li>
+</ol>
+</li>
+
+<li>
+<p>Increase <em>n</em> by 1.</p>
+</li>
+
+<li>
+<p>Increase <em>k</em> by 1.</p>
+</li>
+
+<li>
+<p>Else, E is not an Array i. Call the [[DefineOwnProperty]] internal method of A with arguments ToString(n), Property Descriptor {[[Value]]: E, [[Writable]]: <strong>true</strong>, [[Enumerable]]: <strong>true</strong>, [[Configurable]]: <strong>true</strong>}, and false. ii. Increase <em>n</em> by 1.</p>
+</li>
+</ol>
+</li>
+
+<li>
+<p>Return A. The length property of the concat method is 1.</p>
+</li>
+</ol>
+
+<p><strong>NOTE</strong> The concat function is intentionally generic; it does not require that its this value be an Array object. Therefore it can be transferred to other kinds of objects for use as a method. Whether the concat function can be applied successfully to a host object is implementation-dependent.</p>
+
+  <h2>Code Editor</h2>
+  <div id="editor">
+    
+  </div>
+  <button class="pure-button pure-button-primary" id="test">Test</button>
+  <div id="testresult">
+    <ul id="logger"></ul>
+  </div>
+</div>
+
+
+        <footer class="footer">
+          <div class="pure-menu pure-menu-horizontal pure-menu-open">
+            <ul>
+              <li><a href="http://github.com/liuyl">Follow Me On Github</a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="/assets/themes/liuyl/js/jquery.js"></script>
+    <script src="/assets/themes/liuyl/js/qunit.js"></script>
+    <script src="/assets/themes/liuyl/js/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/assets/themes/liuyl/js/tests.js"></script>
+  </body>
+</html>

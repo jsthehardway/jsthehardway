@@ -1,0 +1,197 @@
+body {
+    color: #333;
+}
+a {
+    text-decoration: none;
+    color: #1b98f8;
+}
+
+/* LAYOUT CSS */
+#layout {
+    padding-left:500px; /* "left col (nav + list)" width */
+    position: relative;
+}
+
+#nav, #list {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+}
+#nav {
+    margin-left:-500px; /* "left col (nav + list)" width */
+    width:150px;
+    background: rgb(37, 42, 58);
+    text-align: center;
+    padding: 2em 0;
+}
+
+#list {
+    margin-left: -350px;
+    width:350px;
+    border-right: 1px solid #ddd;
+}
+
+#main {
+    width: 100%;
+}
+
+/* HELPER CLASSES */
+.primary-button,
+.secondary-button {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.primary-button {
+    color: #fff;
+    background: #1b98f8;
+    margin: 1em 0;
+}
+.secondary-button {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #666;
+    padding: 0.5em 2em;
+    font-size: 80%;
+}
+
+
+
+/* Vertical Navigation Styles */
+#nav .pure-menu {
+    background: transparent;
+    border: none;
+    text-align: left;
+}
+    #nav .pure-menu a:hover,
+    #nav .pure-menu a:focus,
+    #nav .pure-menu-selected {
+        background: rgb(55, 60, 90);
+    }
+    #nav .pure-menu a {
+        color: #fff;
+        margin-left: 0.5em;
+    }
+    #nav .pure-menu-heading {
+        border-bottom: none;
+        font-size:110%;
+        color: rgb(75, 113, 151);
+    }
+
+    #nav .nav-menu-button {
+        display: none;
+    }
+
+    .blog-count {
+        color: rgb(75, 113, 151);
+    }
+
+    .blog-label-personal,
+    .blog-label-work,
+    .blog-label-travel {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        margin-right: 0.5em;
+        border-radius: 3px;
+    }
+    .blog-label-personal {
+        background: #ffc94c;
+    }
+    .blog-label-work {
+        background: #41ccb4;
+    }
+    .blog-label-travel {
+        background: #40c365;
+    }
+
+
+/* Email Item Styles */
+.blog-titles {
+    padding: 0.9em 1em;
+    border-bottom: 1px solid #ddd;
+    border-left: 6px solid transparent;
+}
+    .blog-avatar {
+        border-radius: 3px;
+        margin-right: 0.5em;
+    }
+    .blog-name, .blog-subject {
+        margin: 0;
+    }
+
+    .blog-name {
+        text-transform: uppercase;
+        color: #999;
+    }
+
+    .blog-desc {
+        font-size: 80%;
+        margin: 0.4em 0;
+    }
+
+.blog-titles-selected {
+    background: #eee;
+}
+
+/* Email Content Styles */
+.blog-content-header, .blog-content-body, .blog-content-footer {
+    padding: 1em 2em;
+}
+    .blog-content-header {
+        border-bottom: 1px solid #ddd;
+    }
+
+        .blog-content-title {
+            margin: 0.5em 0 0;
+        }
+        .blog-content-subtitle {
+            font-size: 1em;
+            margin: 0;
+            font-weight: normal;
+        }
+            .blog-content-subtitle span {
+                color: #999;
+            }
+    .blog-content-controls {
+        margin-top: 2em;
+        text-align: right;
+    }
+        .blog-content-controls .secondary-button {
+            margin-bottom: 0.3em;
+        }
+
+
+.blog-titles{
+  cursor: pointer;
+}
+.blog-titles:hover, .blog-titles-selected {
+    border-left: 6px solid #02a3c6;
+}
+.month>p, .day>p, .dow>p{
+  margin: 0;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 3px;
+}
+.date{
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.month{
+  background-color: #01c597;
+  font-size: 14px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.day{
+  background-color: #f2f2f2;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.day{
+  color: #656565;
+}
